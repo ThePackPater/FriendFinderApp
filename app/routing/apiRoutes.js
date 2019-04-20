@@ -10,8 +10,9 @@ module.exports = function(app) {
         var bestMatch = {
             name: "",
             photo: "",
-            friendDifference: 1000
+            friendDifference: 0
         };
+
         var userData = req.body;
         var userName = userData.name;
         var userScores = userData.scores;
@@ -19,17 +20,18 @@ module.exports = function(app) {
         var b = userScores.map(function(item) {
             return parseInt(item, 10);
         });
+
         userData = {
             name: req.body.name,
             photo: req.body.photo,
             scores: b
         };
-        console.log("Name: " + userName);
 
         var sum = b.reduce(function(total, amount) {
             return total + amount;
         });
 
+        console.log("Name: " + userName);
         console.log("User score " + sum);
         console.log("Best Match friend diff " + bestMatch.friendDifference);
         console.log("***************************************************");
@@ -54,8 +56,10 @@ module.exports = function(app) {
 
             console.log(totalDifference + " Total Difference");
         }
-        console.log(bestMatch);
+
         friends.push(userData);
+
+        console.log(bestMatch);
         console.log("New User Added");
         console.log(userData);
         res.json(bestMatch);

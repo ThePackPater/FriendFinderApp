@@ -232,6 +232,8 @@
 
                 console.log(userData);
 
+                friends.push(userData);
+
 
                 $.post("/api/friends", userData, function(data) {
 
