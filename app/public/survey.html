@@ -97,7 +97,7 @@
                 </div>
                 <div class="form-group">
                     <label for="q3">3. "Two possibilities exist: either we are alone in the Universe or we are not. Both are equally terrifying."</label>
-                    <select id="q2" class="custom-select" required>
+                    <select id="q3" class="custom-select" required>
                             <option value="">click to open this select menu</option>
                             <option value="5">5 totally agree</option>
                             <option value="4">4 kinda agree</option>
@@ -193,56 +193,90 @@
                 <br>
             </form>
         </div>
+        <div id="resultsModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+
+                    </button>
+                    <h2 class="modal-title"><strong>Best Match</strong></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-body">
+            <h2 id="matchName"></h2>
+            <h3 id="matchQuote"></h3>
+            <img id="matchPhoto" src="https:viaplaceholder.com/400x400" alt="Placeholder image incase image doesnt show">
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+            close
+        </button>
+        </div>
 
 
         <script type="text/javascript">
             $("#submit").on("click", function(event) {
-                        event.preventDefault();
+                event.preventDefault();
 
-                        var newFriend = {
-                            name: $("#userName").val(),
-                            quote: $("quote"),
-                            photo: $("#userPhoto").val(),
-                            scores: [
-                                $("#q1").val(),
-                                $("#q2").val(),
-                                $("#q3").val(),
-                                $("#q4").val(),
-                                $("#q5").val(),
-                                $("#q6").val(),
-                                $("#q7").val(),
-                                $("#q8").val(),
-                                $("#q9").val(),
-                                $("#q10").val()
-                            ]
-                        };
+                var newFriend = {
+                    name: $("#userName").val(),
+                    quote: $("#quote"),
+                    photo: $("#userPhoto").val(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
+                    ]
+                };
 
-                        $.post("/api/friends", newFriend, function(data) {
+                console.log(newFriend);
 
-                            console.log(newFriend);
 
-                            if (data) {
-                                alert("Yay! You're In! Please hold for your match!");
-                                //add in function to compare to stored data & diplay result
-                            } else {
-                                alert("Let's fill out the whole form please");
-                            }
+                $.post("/api/friends", newFriend, function(data) {
 
-                            $("#userName").val("");
-                            $("#quote").val("");
-                            $("#userphoto").val("");
-                            $("#q1").val(""),
-                                $("#q2").val(""),
-                                $("#q3").val(""),
-                                $("#q4").val(""),
-                                $("#q5").val(""),
-                                $("#q6").val(""),
-                                $("#q7").val(""),
-                                $("#q8").val(""),
-                                $("#q9").val(""),
-                                $("#q10").val("")
+                    $("matchName").text(data.name);
+                    $("matchQuote").text(data.quote);
+                    $("matchPhoto").attr("src", data.photo);
+                    $("resultsModal").modal("toggle");
+                })
 
-                        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+                $("#userName").val("");
+                $("#quote").val("");
+                $("#userphoto").val("");
+                $("#q1").val(""),
+                    $("#q2").val(""),
+                    $("#q3").val(""),
+                    $("#q4").val(""),
+                    $("#q5").val(""),
+                    $("#q6").val(""),
+                    $("#q7").val(""),
+                    $("#q8").val(""),
+                    $("#q9").val(""),
+                    $("#q10").val("")
+
+            });
         </script>
 
 </body>
