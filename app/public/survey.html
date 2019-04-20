@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Css style -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/stylesheet.css"> -->
+    <!--The Bootstrapary-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--The Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
+    <!-- Font Awesomness -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <!--Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- my JavaScript <script type="text/javascript" src="myjs.js"></script> -->
+
+    <title>Friends Indeed Survey</title>
+
+    <style>
+        body {
+            background: url(https://media1.giphy.com/media/MPbLYRdJzLKa4/giphy.gif);
+            font-family: 'Josefin Sans', sans-serif
+        }
+        
+        #Survey {
+            background-color: rgb(205, 224, 218);
+        }
+        
+        .jumbotron {
+            background-color: rgb(231, 231, 113);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <br>
+        <div class="jumbotron">
+            <h1 class="text-center"><span class="fas fa-user-astronaut"></span> Geeky Friend Finder <span class="fab fa-d-and-d"></span></h1>
+            <hr>
+        </div>
+        <div class="container" id="Survey">
+            <br>
+            <h2>Let's get this survey started..</h2>
+            <hr>
+            <form class="was-validated">
+                <div class="mb-3">
+                    <label for="validationTextarea">Enter Your Name.</label>
+                    <textarea class="form-control is-invalid" id="userName" placeholder="This is required, we need your name to find your match.." required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="validationTextarea">Add a Photo link.</label>
+                    <textarea class="form-control is-invalid" id="userPhoto" placeholder="This is required, we need a photo URL to find your match.." required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="validationTextarea">Enter Your Personal Quote.</label>
+                    <textarea class="form-control is-invalid" id="quote" placeholder="This is required, we need your Quote to find your match.." required></textarea>
+                </div>
+
+
+                <hr>
+                <h3>Please select the option that best describes your opinion of the each quote.</h3>
+                <br>
+                <div class="form-group">
+                    <label for="q1">1. "the Answer to the Ultimate Question of Life, the Universe, and Everything is (42)"</label>
+                    <select id="q1" class="custom-select" required>
+                        <option value="">click to open this select menu</option>
+                        <option value="5">5 totally agree</option>
+                        <option value="4">4 kinda agree</option>
+                        <option value="3">3 meh whatever</option>
+                        <option value="2">2 kinda disagree</option>
+                        <option value="1">1 totally disagree</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="q2">2. "It does not do to leave a 'live' dragon out of your calculations, if you live near him."</label>
+                    <select id="q2" class="custom-select" required>
+                            <option value="">click to pen this select menu</option>
+                            <option value="5">5 totally agree</option>
+                            <option value="4">4 kinda agree</option>
+                            <option value="3">3 meh whatever</option>
+                            <option value="2">2 kinda disagree</option>
+                            <option value="1">1 totally disagree</option>
+                        </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="q3">3. "Two possibilities exist: either we are alone in the Universe or we are not. Both are equally terrifying."</label>
+                    <select id="q2" class="custom-select" required>
+                            <option value="">click to open this select menu</option>
+                            <option value="5">5 totally agree</option>
+                            <option value="4">4 kinda agree</option>
+                            <option value="3">3 meh whatever</option>
+                            <option value="2">2 kinda disagree</option>
+                            <option value="1">1 totally disagree</option>
+                        </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="q4">4. "If more of us valued food and cheer and song above hoarded gold, it would be a merrier world."</label>
+                    <select id="q4" class="custom-select" required>
+                            <option value="">click to open this select menu</option>
+                            <option value="5">5 totally agree</option>
+                            <option value="4">4 kinda agree</option>
+                            <option value="3">3 meh whatever</option>
+                            <option value="2">2 kinda disagree</option>
+                            <option value="1">1 totally disagree</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="q5">5. "It is said that despite its many glaring (and occasionally fatal) inaccuracies, the Hitchhiker's Guide to the Galaxy itself has outsold the Encyclopedia Galactica because it is slightly cheaper, and because it has the words 'DON'T PANIC' in large, friendly letters on the cover."</label>
+                    <select id="q5" class="custom-select" required>
+                            <option value="">click to open this select menu</option>
+                            <option value="5">5 totally agree</option>
+                            <option value="4">4 kinda agree</option>
+                            <option value="3">3 meh whatever</option>
+                            <option value="2">2 kinda disagree</option>
+                            <option value="1">1 totally disagree</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="q6">6. "Perhaps man wasn't meant for paradise. Maybe he was meant to claw, to scratch all the way." </label>
+                    <select id="q6" class="custom-select" required>
+                            <option value="">click to open this select menu</option>
+                            <option value="5">5 totally agree</option>
+                            <option value="4">4 kinda agree</option>
+                            <option value="3">3 meh whatever</option>
+                            <option value="2">2 kinda disagree</option>
+                            <option value="1">1 totally disagree</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="q7">7. “Your focus determines your reality.” </label>
+                    <select id="q7" class="custom-select" required>
+                            <option value="">click to open this select menu</option>
+                            <option value="5">5 totally agree</option>
+                            <option value="4">4 kinda agree</option>
+                            <option value="3">3 meh whatever</option>
+                            <option value="2">2 kinda disagree</option>
+                            <option value="1">1 totally disagree</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="q8">8. "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkness bind them."</label>
+                    <select id="q8" class="custom-select" required>
+                            <option value="">click to open this select menu</option>
+                            <option value="5">5 totally agree</option>
+                            <option value="4">4 kinda agree</option>
+                            <option value="3">3 meh whatever</option>
+                            <option value="2">2 kinda disagree</option>
+                            <option value="1">1 totally disagree</option>
+                        </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="q9">9. "Love is the  first rule of flying. You can know all the math in the 'verse but take a boat in the air that you don't love? She'll shake you off just as sure as a turn in the worlds. Love keeps her in the air when she oughta fall down...tell you she's hurtin' 'fore she keels...makes her a home.”</label>
+                    <select id="q9" class="custom-select" required>
+                            <option value="">click to open this select menu</option>
+                            <option value="5">5 totally agree</option>
+                            <option value="4">4 kinda agree</option>
+                            <option value="3">3 meh whatever</option>
+                            <option value="2">2 kinda disagree</option>
+                            <option value="1">1 totally disagree</option>
+                        </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="q10">10. “Do. Or do not. There is no try.”</label>
+                    <select id="q10" class="custom-select" required>
+                            <option value="">click to open this select menu</option>
+                            <option value="5">5 totally agree</option>
+                            <option value="4">4 kinda agree</option>
+                            <option value="3">3 meh whatever</option>
+                            <option value="2">2 kinda disagree</option>
+                            <option value="1">1 totally disagree</option>
+                        </select>
+
+                </div>
+                <div>
+                    <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-meteor"></i> Submit</button>
+                </div>
+                <br>
+            </form>
+        </div>
+
+
+        <script type="text/javascript">
+            $("#submit").on("click", function(event) {
+                        event.preventDefault();
+
+                        var newFriend = {
+                            name: $("#userName").val(),
+                            quote: $("quote"),
+                            photo: $("#userPhoto").val(),
+                            scores: [
+                                $("#q1").val(),
+                                $("#q2").val(),
+                                $("#q3").val(),
+                                $("#q4").val(),
+                                $("#q5").val(),
+                                $("#q6").val(),
+                                $("#q7").val(),
+                                $("#q8").val(),
+                                $("#q9").val(),
+                                $("#q10").val()
+                            ]
+                        };
+
+                        $.post("/api/friends", newFriend, function(data) {
+
+                            console.log(newFriend);
+
+                            if (data) {
+                                alert("Yay! You're In! Please hold for your match!");
+                                //add in function to compare to stored data & diplay result
+                            } else {
+                                alert("Let's fill out the whole form please");
+                            }
+
+                            $("#userName").val("");
+                            $("#quote").val("");
+                            $("#userphoto").val("");
+                            $("#q1").val(""),
+                                $("#q2").val(""),
+                                $("#q3").val(""),
+                                $("#q4").val(""),
+                                $("#q5").val(""),
+                                $("#q6").val(""),
+                                $("#q7").val(""),
+                                $("#q8").val(""),
+                                $("#q9").val(""),
+                                $("#q10").val("")
+
+                        });
+        </script>
+
+</body>
+
+</html>
