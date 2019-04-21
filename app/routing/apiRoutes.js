@@ -6,62 +6,27 @@ module.exports = function(app) {
     });
 
     app.post("/api/friends", function(req, res) {
-        var totalDifference = 0;
-        var bestMatch = {
-            name: "",
-            photo: "",
-            friendDifference: 0
-        };
 
         var userData = req.body;
-        var userName = userData.name;
-        var userScores = userData.scores;
-
-        var b = userScores.map(function(item) {
-            return parseInt(item, 10);
-        });
-
-        userData = {
-            name: req.body.name,
-            photo: req.body.photo,
-            scores: b
-        };
-
-        var sum = b.reduce(function(total, amount) {
-            return total + amount;
-        });
-
-        console.log("Name: " + userName);
-        console.log("User score " + sum);
-        console.log("Best Match friend diff " + bestMatch.friendDifference);
-        console.log("***************************************************");
-
-        for (var i = 0; i < friends.length; i++) {
-            console.log(friends[i].name);
-            totalDifference = 0;
-            console.log("Total Difference :" + totalDifference);
-            console.log("Best Match Friend Difference: " + bestMatch.friendDifference);
-            var bfriendScore = friends[i].scores.reduce(function(total, amount) {
-                return total + amount;
-            });
-            console.log("Total Friend Score: " + bfriendScore);
-            totalDifference += Math.abs(sum - bfriendScore);
-            console.log("--------------------------------> " + totalDifference);
-
-            if (totalDifference <= bestMatch.friendDifference) {
-                bestMatch.name = friends[i].name;
-                bestMatch.photo = friends[i].photo;
-                bestMatch.friendDifference = totalDifference;
-            }
-
-            console.log(totalDifference + " Total Difference");
-        }
-
-        friends.push(userData);
-
-        console.log(bestMatch);
         console.log("New User Added");
         console.log(userData);
-        res.json(bestMatch);
+        console.log("<-------------------------------------->");
+        friends.push(userData);
+
+        for (var i = 0; i < friends.length; i++) {
+            console.log("Friend Name: " + friends[i].name);
+            console.log("Total Friend Score: " + matchScore);
+            var matchScore = friends[i].scores.reduce(function(total, amount) {
+                return total + amount;
+            });
+
+        }
+
+        // var bestMatch = {
+        //     name: "",
+        //     photo: "",
+        //     matchSum: ""
+        // };
+
     });
 };
