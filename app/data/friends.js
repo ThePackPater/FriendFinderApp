@@ -171,6 +171,123 @@ var friends = [
             "5",
             "4"
         ]
+    },
+
+    {
+        "name": "Sasha",
+        "photo": "https://cdn2.sussexdirectories.com/rms/rms_photos/sized/50/16/441650-1423734-3_320x400.jpg?pu=1549664799",
+        "scores": [
+            "5",
+            "1",
+            "3",
+            "5",
+            "2",
+            "1",
+            "3",
+            "2",
+            "1",
+            "5"
+        ]
+    },
+    {
+        "name": "Andy",
+        "photo": "https://media.licdn.com/dms/image/C4E03AQHVb60tYxSOOg/profile-displayphoto-shrink_200_200/0?e=1561593600&v=beta&t=fkDs-Yg5HD1e6muHzyG53T-JSylGsTBxef9AECTm5xM",
+        "scores": [
+            "5",
+            "5",
+            "5",
+            "3",
+            "5",
+            "3",
+            "5",
+            "5",
+            "3",
+            "5"
+        ]
+    },
+    {
+        "name": "Yoda",
+        "photo": "https://starwarsblog.starwars.com/wp-content/uploads/2015/11/yoda-the-empire-strikes-back-1536x864-349144518002.jpg",
+        "scores": [
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "1",
+            "5",
+            "1",
+            "5",
+            "5"
+        ]
+    },
+
+    {
+        "name": "Emily",
+        "photo": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/53280741_10213738443440904_7092255933694214144_n.jpg?_nc_cat=100&_nc_ht=scontent-atl3-1.xx&oh=557433ea8691631b620332474ff585b4&oe=5D757A57",
+        "scores": [
+            "5",
+            "5",
+            "1",
+            "5",
+            "4",
+            "2",
+            "5",
+            "5",
+            "3",
+            "5"
+        ]
+    },
+
+    {
+        "name": "Devan",
+        "photo": "https://www.facebook.com/images/photos/profile/gradient.png",
+        "scores": [
+            "3",
+            "5",
+            "1",
+            "3",
+            "1",
+            "3",
+            "5",
+            "5",
+            "3",
+            "5"
+        ]
+    },
+
+    {
+        "name": "Invader Zim",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIWxldW1qRZk8VksmN3nlFmVosTc2mz5tCGCLG2FILIvK-dxijEg",
+        "scores": [
+            "5",
+            "1",
+            "1",
+            "1",
+            "5",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+        ]
+    },
+
+    {
+        "name": "Danny Elfman",
+        "photo": " https://res.cloudinary.com/teepublic/image/private/s--vn9FuxXG--/t_Preview/b_rgb:000000,c_limit,f_jpg,h_630,q_90,w_630/v1446225041/production/designs/195984_1.jpg",
+        "scores": [
+            "5",
+            "5",
+            "5",
+            "1",
+            "1",
+            "5",
+            "1",
+            "5",
+            "5",
+            "1"
+        ]
     }
 ];
 

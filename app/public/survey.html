@@ -35,6 +35,10 @@
         .jumbotron {
             background-color: yellow;
         }
+        
+        .modal-content {
+            background-color: yellow;
+        }
     </style>
 
 </head>
@@ -69,7 +73,7 @@
                 <h3>Select how well you know the origin of the each GEEK quote.</h3>
                 <br>
                 <div class="form-group">
-                    <label for="q1">1. "The Answer to the Ultimate Question of Life, the Universe, and Everything is (42)"</label>
+                    <label for="validationInput">1. "The Answer to the Ultimate Question of Life, the Universe, and Everything is (42)"</label>
                     <select id="q1" class="custom-select" required>
                         <option value="">click to open this select menu..</option>
                         <option value="5">5. Totally get that reference..</option>
@@ -80,7 +84,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="q2">2. "Strange things are afoot at the Circle K, Dude."</label>
+                    <label for="validationInput">2. "Strange things are afoot at the Circle K, Dude."</label>
                     <select id="q2" class="custom-select" required>
                         <option value="">click to open this select menu..</option>
                         <option value="5">5. Totally get that reference..</option>
@@ -91,7 +95,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                    <label for="q3">3. "Two possibilities exist: either we are alone in the Universe or we are not. Both are equally terrifying."</label>
+                    <label for="validationInput">3. "Two possibilities exist: either we are alone in the Universe or we are not. Both are equally terrifying."</label>
                     <select id="q3" class="custom-select" required>
                         <option value="">click to open this select menu..</option>
                         <option value="5">5. Totally get that reference..</option>
@@ -102,7 +106,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                    <label for="q4">4. "If more of us valued food and cheer and song above hoarded gold, it would be a merrier world."</label>
+                    <label for="validationInput">4. "If more of us valued food and cheer and song above hoarded gold, it would be a merrier world."</label>
                     <select id="q4" class="custom-select" required>
                         <option value="">click to open this select menu..</option>
                         <option value="5">5. Totally get that reference..</option>
@@ -113,7 +117,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                    <label for="q5">5. "So say we all."</label>
+                    <label for="validationInput">5. "So say we all."</label>
                     <select id="q5" class="custom-select" required>
                         <option value="">click to open this select menu..</option>
                         <option value="5">5. Totally get that reference..</option>
@@ -124,7 +128,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                    <label for="q6">6. "Perhaps man wasn't meant for paradise. Maybe he was meant to claw, to scratch all the way." </label>
+                    <label for="validationInput">6. "Perhaps man wasn't meant for paradise. Maybe he was meant to claw, to scratch all the way." </label>
                     <select id="q6" class="custom-select" required>
                         <option value="">click to open this select menu..</option>
                         <option value="5">5. Totally get that reference..</option>
@@ -135,7 +139,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                    <label for="q7">7. “Your focus determines your reality.” </label>
+                    <label for="validationInput">7. “Your focus determines your reality.” </label>
                     <select id="q7" class="custom-select" required>
                         <option value="">click to open this select menu..</option>
                         <option value="5">5. Totally get that reference..</option>
@@ -146,7 +150,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                    <label for="q8">8. "Yeah, well. The Dude abides."</label>
+                    <label for="validationInput">8. "Yeah, well. The Dude abides."</label>
                     <select id="q8" class="custom-select" required>
                         <option value="">click to open this select menu..</option>
                         <option value="5">5. Totally get that reference..</option>
@@ -157,7 +161,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                    <label for="q9">9. "No matter where you go, there you are. ”</label>
+                    <label for="validationInput">9. "No matter where you go, there you are. ”</label>
                     <select id="q9" class="custom-select" required>
                         <option value="">click to open this select menu..</option>
                         <option value="5">5. Totally get that reference..</option>
@@ -168,7 +172,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                    <label for="q10">10. “Do. Or do not. There is no try.”</label>
+                    <label for="validationInput">10. “Do. Or do not. There is no try.”</label>
                     <select id="q10" class="custom-select" required>
                         <option value="">click to open this select menu..</option>
                         <option value="5">5. Totally get that reference..</option>
@@ -196,47 +200,70 @@
                         <h4 class="modal-title">Best Match</h4>
                     </div>
                     <div class="modal-body">
-                        <p id="matchName"><b></b></p>
-                        <img id="matchPhoto" height="242" width="242">
+                        <h2 id="matchName"><b></b></h2>
+                        <img id="matchPhoto" height="342" width="342">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-lg btn-primary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <script type="text/javascript">
-            $("#submit").on("click", function(event) {
-                event.preventDefault();
+            $("#submit").on("click", function() {
+                //event.preventDefault();
 
-                var userData = {
-                    name: $("#userName").val(),
-                    photo: $("#userPhoto").val(),
-                    scores: [
-                        $("#q1").val(),
-                        $("#q2").val(),
-                        $("#q3").val(),
-                        $("#q4").val(),
-                        $("#q5").val(),
-                        $("#q6").val(),
-                        $("#q7").val(),
-                        $("#q8").val(),
-                        $("#q9").val(),
-                        $("#q10").val()
-                    ]
+                function toValidate() {
+                    var isValid = true;
+                    $(".form-control").each(function() {
+                        if ($(this).val() === "") {
+                            isValid = false;
+                        }
+                    });
+                    $(".custom-select").each(function() {
+                        if ($(this).val() === "") {
+                            isValid = false;
+                        }
+                    });
+                    return isValid;
+                }
+                if (toValidate()) {
 
-                };
+                    var userData = {
+                        name: $("#userName").val(),
+                        photo: $("#userPhoto").val(),
+                        scores: [
+                            $("#q1").val(),
+                            $("#q2").val(),
+                            $("#q3").val(),
+                            $("#q4").val(),
+                            $("#q5").val(),
+                            $("#q6").val(),
+                            $("#q7").val(),
+                            $("#q8").val(),
+                            $("#q9").val(),
+                            $("#q10").val()
+                        ]
 
-                var currentURL = window.location.origin;
+                    };
 
-                $.post(currentURL + "/api/friends", userData, function(data) {
+                    var currentURL = window.location.origin;
 
-                    $("#matchName").text(data.name);
-                    $("#matchPhoto").attr("src", data.photo);
-                    $("#resultsModal").modal("toggle");
+                    $.post(currentURL + "/api/friends", userData, function(data) {
 
-                });
+                        $("#matchName").text(data.name);
+                        $("#matchPhoto").attr("src", data.photo);
+                        $("#resultsModal").modal("toggle");
+
+                    });
+
+                } else {
+
+                    alert("Dude, complete the whole survey!!");
+                }
+
+                return false;
 
                 // Clear the form when submitting
 
