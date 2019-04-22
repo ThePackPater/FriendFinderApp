@@ -288,6 +288,23 @@ var friends = [
             "5",
             "1"
         ]
+    },
+
+    {
+        "name": "Stan Lee",
+        "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3fAJjKsRDHmTA5olpq-oVTua-ylGRyaAlQMQjgJjCbM9BZtqWQ",
+        "scores": [
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5",
+            "5"
+        ]
     }
 ];
 
