@@ -33,7 +33,7 @@
         }
         
         .jumbotron {
-            background-color: rgb(231, 231, 113);
+            background-color: yellow;
         }
     </style>
 
@@ -44,8 +44,11 @@
     <div class="container">
         <br>
         <div class="jumbotron">
-            <h1 class="text-center"><span class="fas fa-user-astronaut"></span> Geeky Friend Finder <span class="fab fa-d-and-d"></span></h1>
+            <div class="text text-center">
+                <img height="142" width="142" src="https://seeklogo.com/images/H/hitchhikers-guide-to-the-galaxy-logo-DA00C9A22A-seeklogo.com.png" class="img-fluid" alt="Responsive image">
+            </div>
             <hr>
+            <h1 class="text-center"><span class="fas fa-user-astronaut"></span> Geeky Friend Finder </h1>
         </div>
         <div class="container" id="Survey">
             <br>
@@ -75,7 +78,6 @@
                         <option value="2">2. Meh whatever..</option>
                         <option value="1">1. Not a clue, bub..</option>
                     </select>
-
                 </div>
                 <div class="form-group">
                     <label for="q2">2. "Strange things are afoot at the Circle K, Dude."</label>
@@ -87,7 +89,6 @@
                         <option value="2">2. Meh whatever..</option>
                         <option value="1">1. Not a clue, bub..</option>
                         </select>
-
                 </div>
                 <div class="form-group">
                     <label for="q3">3. "Two possibilities exist: either we are alone in the Universe or we are not. Both are equally terrifying."</label>
@@ -99,7 +100,6 @@
                         <option value="2">2. Meh whatever..</option>
                         <option value="1">1. Not a clue, bub..</option>
                         </select>
-
                 </div>
                 <div class="form-group">
                     <label for="q4">4. "If more of us valued food and cheer and song above hoarded gold, it would be a merrier world."</label>
@@ -155,7 +155,6 @@
                         <option value="2">2. Meh whatever..</option>
                         <option value="1">1. Not a clue, bub..</option>
                         </select>
-
                 </div>
                 <div class="form-group">
                     <label for="q9">9. "No matter where you go, there you are. ”</label>
@@ -167,7 +166,6 @@
                         <option value="2">2. Meh whatever..</option>
                         <option value="1">1. Not a clue, bub..</option>
                         </select>
-
                 </div>
                 <div class="form-group">
                     <label for="q10">10. “Do. Or do not. There is no try.”</label>
@@ -179,14 +177,11 @@
                         <option value="2">2. Meh whatever..</option>
                         <option value="1">1. Not a clue, bub..</option>
                         </select>
-
-                </div>
-                <div>
-                    <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block"><i class="fas fa-meteor"></i> Submit</button>
                 </div>
                 <br>
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-info btn-lg btn btn-block" data-toggle="modal" data-target="#myModal">Find My Match</button>
+                <button type="button" id="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><i class="fas fa-meteor"></i> Find My Match</button>
+                <br>
                 <br>
             </form>
         </div>
@@ -201,7 +196,8 @@
                         <h4 class="modal-title">Best Match</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Some text in the modal.</p>
+                        <p id="matchName"><b></b></p>
+                        <img id="matchPhoto" height="242" width="242">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -209,8 +205,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <script type="text/javascript">
             $("#submit").on("click", function(event) {
@@ -231,16 +225,20 @@
                         $("#q9").val(),
                         $("#q10").val()
                     ]
+
                 };
 
-                console.log(userData);
+                var currentURL = window.location.origin;
 
-                $.post("/api/friends", userData, function(data) {
+                $.post(currentURL + "/api/friends", userData, function(data) {
 
                     $("#matchName").text(data.name);
                     $("#matchPhoto").attr("src", data.photo);
                     $("#resultsModal").modal("toggle");
-                })
+
+                });
+
+                // Clear the form when submitting
 
                 $("#userName").val("");
                 $("#userphoto").val("");

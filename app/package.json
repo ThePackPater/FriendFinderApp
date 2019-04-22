@@ -1,16 +1,25 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "",
+  "description": "friend finder app",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
     "path": "^0.12.7"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ThePackPater/FriendFinderApp.git"
+  },
+  "author": "Pack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThePackPater/FriendFinderApp/issues"
+  },
+  "homepage": "https://github.com/ThePackPater/FriendFinderApp#readme"
 }
